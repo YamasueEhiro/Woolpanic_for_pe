@@ -1,0 +1,33 @@
+２対２のPVP　一人は除け者
+
+投擲物
+雪玉、矢
+仕様物
+スポーンエッグ
+
+タグ
+/team A　player
+wolf　
+ocelot
+
+/team B player
+rabbit
+cow
+
+painter
+spider　A
+cavespider B
+
+areafill
+silverfish A
+endermite B
+
+bihaivior component
+is_saddled
+is_baby
+is_charged
+is_tamed
+is_sheared
+is_dyeable
+
+戦闘中
