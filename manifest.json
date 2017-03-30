@@ -1,0 +1,18 @@
+{
+	//made by yamasue ehiro
+   "format_version" : 1,
+   "header" : {
+      "description" : "装備立て。ボートにハーフブロックを使う、またはウィザースケルトンのスポーンエッグを使うと出現",
+      "name" : "Equipment stand",
+      "uuid" : "82d2c5dd-ed2c-3cf0-a55c-a9e9dd1d0327",
+      "version" : [ 0, 5, 0 ]
+   },
+   "modules" : [
+      {
+         "description" : "装備立て。ボートにハーフブロックを使う、またはウィザースケルトンのスポーンエッグを使うと出現",
+         "type" : "data",
+         "uuid" : "0c3154b1-73cc-3c07-b5d4-44e3189a0327",
+         "version" : [ 0, 5, 0 ]
+      }
+   ]
+}

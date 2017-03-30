@@ -1,0 +1,716 @@
+{
+  "minecraft:entity": {
+    "format_version": 0.1,
+    "component_groups": {
+      "reset": {
+        "minecraft:transformation": {
+          "into": "minecraft:skeleton.wither",
+          "delay": 0
+        }
+      },
+      "eq_lh": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/lh.json"
+        }
+      },
+      "eq_gh": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/gh.json"
+        }
+      },
+      "eq_ch": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/ch.json"
+        }
+      },
+      "eq_ih": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/ih.json"
+        }
+      },
+      "eq_dh": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/dh.json"
+        }
+      },
+      "eq_lc": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/lc.json"
+        }
+      },
+      "eq_gc": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/gc.json"
+        }
+      },
+      "eq_cc": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/cc.json"
+        }
+      },
+      "eq_ic": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/ic.json"
+        }
+      },
+      "eq_dc": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/dc.json"
+        }
+      },
+      "eq_ll": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/ll.json"
+        }
+      },
+      "eq_gl": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/gl.json"
+        }
+      },
+      "eq_cl": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/cl.json"
+        }
+      },
+      "eq_il": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/il.json"
+        }
+      },
+      "eq_dl": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/dl.json"
+        }
+      },
+      "eq_lb": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/lb.json"
+        }
+      },
+      "eq_gb": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/gb.json"
+        }
+      },
+      "eq_cb": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/cb.json"
+        }
+      },
+      "eq_ib": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/ib.json"
+        }
+      },
+      "eq_db": {
+        "minecraft:equipment": {
+          "table": "loot_tables/eqs/db.json"
+        }
+      },
+      "normal_wither": {
+        "minecraft:loot": {
+        "table": "loot_tables/entities/wither_skeleton.json"
+      },
+        "minecraft:equipment": {
+          "table": "loot_tables/entities/wither_skeleton_gear.json"
+        },
+        "minecraft:movement": {
+          "value": 0.25,
+          "max": 0.25
+        },
+        "minecraft:behavior.float": {
+          "priority": 0
+        },
+        "minecraft:behavior.hurt_by_target": {
+          "priority": 1
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "entity_types": [
+            {
+              "filters": {
+                "other_with_families": "player"
+              },
+              "max_dist": 16
+            }
+          ],
+          "must_see": true
+        },
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "target_dist": 1.2,
+          "speed_multiplier": 1.25,
+          "track_target": true
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 5,
+          "speed_multiplier": 1
+        },
+        "minecraft:behavior.look_at_player": {
+          "priority": 6,
+          "look_distance": 8
+        },
+        "minecraft:behavior.random_look_around": {
+          "priority": 6
+        },
+        "minecraft:type_family": {
+          "family": [
+            "wither",
+            "skeleton",
+            "monster",
+            "undead"
+          ]
+        }
+      },
+      "equip_stand": {
+        "minecraft:type_family": {
+          "family": [
+            "unknown"
+          ]
+        },
+        "minecraft:interact": [
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "bone",
+                "other_with_families": "player"
+              },
+              "event": "reset",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "leather_helmet",
+                "other_with_families": "player",
+                "without_armor": [
+                  "golden_helmet",
+                  "chainmail_helmet",
+                  "iron_helmet",
+                  "diamond_helmet"
+                ]
+              },
+              "event": "eq_lh",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "golden_helmet",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_helmet",
+                  "chainmail_helmet",
+                  "iron_helmet",
+                  "diamond_helmet"
+                ]
+              },
+              "event": "eq_gh",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "chainmail_helmet",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_helmet",
+                  "golden_helmet",
+                  "iron_helmet",
+                  "diamond_helmet"
+                ]
+              },
+              "event": "eq_ch",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "iron_helmet",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_helmet",
+                  "golden_helmet",
+                  "chainmail_helmet",
+                  "diamond_helmet"
+                ]
+              },
+              "event": "eq_ih",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "diamond_helmet",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_helmet",
+                  "golden_helmet",
+                  "chainmail_helmet",
+                  "iron_helmet"
+                ]
+              },
+              "event": "eq_dh",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "leather_chestplate",
+                "other_with_families": "player",
+                "without_armor": [
+                  "golden_chestplate",
+                  "chainmail_chestplate",
+                  "iron_chestplate",
+                  "diamond_chestplate"
+                ]
+              },
+              "event": "eq_lc",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "golden_chestplate",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_chestplate",
+                  "chainmail_chestplate",
+                  "iron_chestplate",
+                  "diamond_chestplate"
+                ]
+              },
+              "event": "eq_gc",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "chainmail_chestplate",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_chestplate",
+                  "golden_chestplate",
+                  "iron_chestplate",
+                  "diamond_chestplate"
+                ]
+              },
+              "event": "eq_cc",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "iron_chestplate",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_chestplate",
+                  "golden_chestplate",
+                  "chainmail_chestplate",
+                  "diamond_chestplate"
+                ]
+              },
+              "event": "eq_ic",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "diamond_chestplate",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_chestplate",
+                  "golden_chestplate",
+                  "chainmail_chestplate",
+                  "iron_chestplate"
+                ]
+              },
+              "event": "eq_dc",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "leather_leggings",
+                "other_with_families": "player",
+                "without_armor": [
+                  "golden_leggings",
+                  "chainmail_leggings",
+                  "iron_leggings",
+                  "diamond_leggings"
+                ]
+              },
+              "event": "eq_ll",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "golden_leggings",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_leggings",
+                  "chainmail_leggings",
+                  "iron_leggings",
+                  "diamond_leggings"
+                ]
+              },
+              "event": "eq_gl",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "chainmail_leggings",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_leggings",
+                  "golden_leggings",
+                  "iron_leggings",
+                  "diamond_leggings"
+                ]
+              },
+              "event": "eq_cl",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "iron_leggings",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_leggings",
+                  "golden_leggings",
+                  "chainmail_leggings",
+                  "diamond_leggings"
+                ]
+              },
+              "event": "eq_il",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "diamond_leggings",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_leggings",
+                  "golden_leggings",
+                  "chainmail_leggings",
+                  "iron_leggings"
+                ]
+              },
+              "event": "eq_dl",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "leather_boots",
+                "other_with_families": "player",
+                "without_armor": [
+                  "golden_boots",
+                  "chainmail_boots",
+                  "iron_boots",
+                  "diamond_boots"
+                ]
+              },
+              "event": "eq_lb",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "golden_boots",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_boots",
+                  "chainmail_boots",
+                  "iron_boots",
+                  "diamond_boots"
+                ]
+              },
+              "event": "eq_gb",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "chainmail_boots",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_boots",
+                  "golden_boots",
+                  "iron_boots",
+                  "diamond_boots"
+                ]
+              },
+              "event": "eq_cb",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "iron_boots",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_boots",
+                  "golden_boots",
+                  "chainmail_boots",
+                  "diamond_boots"
+                ]
+              },
+              "event": "eq_ib",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": "true",
+            "interact_text": "装着",
+            "on_interact": {
+              "filters": {
+                "other_with_item": "diamond_boots",
+                "other_with_families": "player",
+                "without_armor": [
+                  "leather_boots",
+                  "golden_boots",
+                  "chainmail_boots",
+                  "iron_boots"
+                ]
+              },
+              "event": "eq_db",
+              "target": "self"
+            }
+          }
+        ]
+      }
+    },
+    "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:skeleton.wither"
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:collision_box": {
+        "width": 0.72,
+        "height": 2.0
+      },
+      "minecraft:attack": {
+        "damage": 4,
+        "effect_name": "wither",
+        "effect_duration": 10
+      },
+      "minecraft:movement": {
+        "value": 0.0,
+        "max": 0.25
+      },
+      "minecraft:scale": {
+        "value": 1.2
+      },
+      "minecraft:fire_immune": true
+    },
+    "events": {
+      "minecraft:entity_transformed": {
+        "add": {
+          "component_groups": [
+            "equip_stand"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 5,
+            "filters": {
+              "other_with_families": "player"
+            },
+            "add": {
+              "component_groups": [
+                "equip_stand"
+              ]
+            }
+          },
+          {
+            "weight": 0,
+            "add": {
+              "component_groups": [
+                "normal_wither"
+              ]
+            }
+          }
+        ]
+      },
+      "reset": {
+        "add": {
+          "component_groups": "reset"
+        }
+      },
+      "eq_lh": {
+        "add": {
+          "component_groups": "eq_lh"
+        }
+      },
+      "eq_gh": {
+        "add": {
+          "component_groups": "eq_gh"
+        }
+      },
+      "eq_ch": {
+        "add": {
+          "component_groups": "eq_ch"
+        }
+      },
+      "eq_ih": {
+        "add": {
+          "component_groups": "eq_ih"
+        }
+      },
+      "eq_dh": {
+        "add": {
+          "component_groups": "eq_dh"
+        }
+      },
+      "eq_lc": {
+        "add": {
+          "component_groups": "eq_lc"
+        }
+      },
+      "eq_gc": {
+        "add": {
+          "component_groups": "eq_gc"
+        }
+      },
+      "eq_cc": {
+        "add": {
+          "component_groups": "eq_cc"
+        }
+      },
+      "eq_ic": {
+        "add": {
+          "component_groups": "eq_ic"
+        }
+      },
+      "eq_dc": {
+        "add": {
+          "component_groups": "eq_dc"
+        }
+      },
+      "eq_ll": {
+        "add": {
+          "component_groups": "eq_ll"
+        }
+      },
+      "eq_gl": {
+        "add": {
+          "component_groups": "eq_gl"
+        }
+      },
+      "eq_cl": {
+        "add": {
+          "component_groups": "eq_cl"
+        }
+      },
+      "eq_il": {
+        "add": {
+          "component_groups": "eq_il"
+        }
+      },
+      "eq_dl": {
+        "add": {
+          "component_groups": "eq_dl"
+        }
+      },
+      "eq_lb": {
+        "add": {
+          "component_groups": "eq_lb"
+        }
+      },
+      "eq_gb": {
+        "add": {
+          "component_groups": "eq_gb"
+        }
+      },
+      "eq_cb": {
+        "add": {
+          "component_groups": "eq_cb"
+        }
+      },
+      "eq_ib": {
+        "add": {
+          "component_groups": "eq_ib"
+        }
+      },
+      "eq_db": {
+        "add": {
+          "component_groups": "eq_db"
+        }
+      }
+    }
+  }
+}

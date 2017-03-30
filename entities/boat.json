@@ -1,0 +1,89 @@
+{
+  "minecraft:entity": {
+    "format_version": 0.1,
+    "component_groups": {
+      "reset": {
+        "minecraft:transformation": {
+          "into": "minecraft:skeleton.wither",
+          "delay": 0
+        }
+      }
+    },
+    "components": {
+      "minecraft:interact": [
+        {
+          "use_item": "true",
+          "interact_text": "装備立てに",
+          "on_interact": {
+            "filters": {
+              "other_with_item": "stone_slab:0",
+              "other_with_families": "player"
+            },
+            "event": "reset",
+            "target": "self"
+          }
+        }
+      ],
+      "minecraft:identifier": {
+        "id": "minecraft:boat"
+      },
+      "minecraft:collision_box": {
+        "width": 1.4,
+        "height": 0.455
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/boat.json"
+      },
+      "minecraft:rideable": {
+        "seat_count": 2,
+        "interact_text": "action.interact.ride.boat",
+        "seats": [
+          {
+            "position": [
+              0.0,
+              -0.2,
+              0.0
+            ],
+            "min_rider_count": 0,
+            "max_rider_count": 1,
+            "rotate_rider_by": -90,
+            "lock_rider_rotation": 90
+          },
+          {
+            "position": [
+              0.2,
+              -0.2,
+              0.0
+            ],
+            "min_rider_count": 2,
+            "max_rider_count": 2,
+            "rotate_rider_by": -90,
+            "lock_rider_rotation": 90
+          },
+          {
+            "position": [
+              -0.6,
+              -0.2,
+              0.0
+            ],
+            "min_rider_count": 2,
+            "max_rider_count": 2,
+            "lock_rider_rotation": 90
+          }
+        ]
+      },
+      "minecraft:is_stackable": {
+        "value": true
+      }
+    },
+    "events": {
+      "reset": {
+        "add": {
+          "component_groups": [
+            "reset"
+          ]
+        }
+      }
+    }
+  }
+}
