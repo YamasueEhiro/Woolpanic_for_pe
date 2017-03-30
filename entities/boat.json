@@ -13,7 +13,7 @@
       "minecraft:interact": [
         {
           "use_item": "true",
-          "interact_text": "装備立てに",
+          "interact_text": "",
           "on_interact": {
             "filters": {
               "other_with_item": "stone_slab:0",
