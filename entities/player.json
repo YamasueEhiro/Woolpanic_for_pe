@@ -4,7 +4,7 @@
     "component_groups": {
       "summon": {
         "minecraft:addrider": {
-          "entity_type": "minecraft:ocelot"
+          "entity_type": "minecraft:donkey"
         }
       }
     },
@@ -64,12 +64,17 @@
               0.0
             ],
             "min_rider_count": 0,
-            "max_rider_count": 1
+            "max_rider_count": 1,
+            
+      "lock_rider_rotation": 0
           }
         ]
       },
+      "minecraft:inherit_rotation_when_riding": {
+  "value": true  
+},
       "minecraft:addrider": {
-        "entity_type": "minecraft:ocelot"
+        "entity_type": "minecraft:donkey"
       },
       "minecraft:nameable": {
         "alwaysShow": true,
@@ -85,7 +90,7 @@
       }
     },
     "events": {
-      "minecraft:entity_born": {
+      "summon": {
         "remove": {},
         "add": {
           "component_groups": [
