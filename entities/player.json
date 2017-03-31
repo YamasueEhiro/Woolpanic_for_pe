@@ -13,9 +13,7 @@
         }
       },
       "reset": {
-        "minecraft:addrider": {
-          //"entity_type": "minecraft:cow"
-        }
+
       },
       "summon": {
         "minecraft:addrider": {
@@ -169,6 +167,7 @@
         "sequence": [
           {
             "filters": {
+              "with_armor":"golden_helmet",
               "without_components": "minecraft:is_sheared"
             },
             "add": {
