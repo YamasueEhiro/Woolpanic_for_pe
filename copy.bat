@@ -5,8 +5,8 @@ rem このバッチの説明
 rem
 
 rem 設定事項
-set HOGE="変数の値"
 
+:retry
 rem このバッチが存在するフォルダをカレントに
 pushd %0\..
 cls
@@ -19,6 +19,7 @@ for /F "usebackq" %%i in (`dir /b `) do (
  rem )
 
 pause
+goto retry
 exit
 
 rem xcopy D:\WpSystem\S-1-5-21-2553201836-958739937-4288200835-1001\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds\gFkAAJXZBwA=\behavior_packs
