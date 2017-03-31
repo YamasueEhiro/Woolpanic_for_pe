@@ -38,6 +38,7 @@
               "with_environment_any": [
                 "altitude_greater:180",
                 "altitude_lss:190"
+                
               ]
             },
             "event": "on_timer"
@@ -153,11 +154,16 @@
     },
     "events": {
       "on_timer": {
-        "add": {
+        "sequence": [
+        {
+          "filters": {
+              "without_components": "minecraft:timer"
+            },
+          "add": {
           "component_groups": [
             "on_timer"
           ]
-        }
+        }}]
       },
       "cheack_time": {
         "sequence": [
@@ -184,8 +190,8 @@
       "reset": {
         "remove": {
           "component_groups": [
-            "summon"//,
-           // "on_timer"
+            "summon",
+            "on_timer"
           ]
         },
         "add": {
