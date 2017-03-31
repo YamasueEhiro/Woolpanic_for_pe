@@ -2,13 +2,59 @@
   "minecraft:entity": {
     "format_version": 0.1,
     "component_groups": {
+      "on_timer": {
+        "minecraft:timer": {
+          "time": 1,
+          "looping": true,
+          "time_down_event": {
+            "event": "cheack_time",
+            "target": "self"
+          }
+        }
+      },
+      "reset": {
+        "minecraft:addrider": {
+          //"entity_type": "minecraft:cow"
+        }
+      },
       "summon": {
         "minecraft:addrider": {
           "entity_type": "minecraft:donkey"
-        }
+        },
+        "minecraft:is_sheared": {
+        },
+        "minecraft:type_family": {
+        "family": [
+          "player","donkey"
+        ]
+      }
       }
     },
     "components": {
+      "minecraft:environment_sensor": [
+        {
+          "on_environment": {
+            "filters": {
+              "with_environment_any": [
+                "altitude_greater:180",
+                "altitude_lss:190"
+              ]
+            },
+            "event": "on_timer"
+          }
+        },
+        {
+          "on_environment": {
+            "filters": {
+              "with_environment_any": [
+                "altitude_greater:200",
+                "altitude_lss:210"
+              ]
+            },
+            "event": "reset"
+          }
+        }
+      ],
       "minecraft:identifier": {
         "id": "minecraft:player"
       },
@@ -22,7 +68,7 @@
       },
       "minecraft:collision_box": {
         "width": 0.6,
-        "height": 2.5
+        "height": 1.9
       },
       "minecraft:movement": {
         "value": 0.1,
@@ -55,26 +101,42 @@
         "generatesBubbles": false
       },
       "minecraft:rideable": {
-        "seat_count": 1,
+        "seat_count": 2,
         "seats": [
           {
             "position": [
               0.0,
-              0.0,
+              -0.9,
               0.0
             ],
             "min_rider_count": 0,
             "max_rider_count": 1,
-            
-      "lock_rider_rotation": 0
+            "lock_rider_rotation": 0
+          },
+          {
+            "position": [
+              0.0,
+              -0.9,
+              0.0
+            ],
+            "min_rider_count": 2,
+            "max_rider_count": 2,
+            "lock_rider_rotation": 0
+          },
+          {
+            "position": [
+              0.0,
+              -0,
+              0.0
+            ],
+            "min_rider_count": 2,
+            "max_rider_count": 2,
+            "lock_rider_rotation": 0
           }
         ]
       },
       "minecraft:inherit_rotation_when_riding": {
-  "value": true  
-},
-      "minecraft:addrider": {
-        "entity_type": "minecraft:donkey"
+        "value": true
       },
       "minecraft:nameable": {
         "alwaysShow": true,
@@ -84,17 +146,51 @@
         "time": 1,
         "looping": true,
         "time_down_event": {
-          "event": "summon",
+          // "event": "summon",
           "target": "self"
         }
       }
     },
     "events": {
+      "on_timer": {
+        "add": {
+          "component_groups": [
+            "on_timer"
+          ]
+        }
+      },
+      "cheack_time": {
+        "sequence": [
+          {
+            "filters": {
+              "without_components": "minecraft:is_sheared"
+            },
+            "add": {
+              "component_groups": [
+                "summon"
+              ]
+            }
+          }
+        ]
+      },
       "summon": {
         "remove": {},
         "add": {
           "component_groups": [
             "summon"
+          ]
+        }
+      },
+      "reset": {
+        "remove": {
+          "component_groups": [
+            "summon"//,
+           // "on_timer"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "reset"
           ]
         }
       }

@@ -26,7 +26,7 @@ endermite B
 
 bihaivior component
 is_saddled
-is_baby
+"minecraft:is_sheared"
 is_charged
 is_tamed
 is_sheared
@@ -40,7 +40,7 @@ is_dyeable
 0 ブロックを消去する
 100 コマブロ地方（光源を用意、羊毛使用禁止
 130~160 ステージ
-180　戦闘用意よう環境（ガラス
+180　戦闘用意よう環境（ガラス,
 200 プレイヤーリセットよう環境（ガラス
 
 戦闘中

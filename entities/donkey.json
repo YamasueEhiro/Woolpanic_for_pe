@@ -242,6 +242,9 @@
       "minecraft:identifier": {
         "id": "minecraft:donkey"
       },
+     "minecraft:scale": {
+          "value":0.5
+        },
       "minecraft:type_family": {
         "family": [ "donkey" ]
       },
@@ -251,7 +254,7 @@
       },
       "minecraft:collision_box": {
         "width": 1.4,
-        "height": 1.6
+        "height": 0
       }
     },
 
